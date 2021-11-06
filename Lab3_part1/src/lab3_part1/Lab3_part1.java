@@ -72,13 +72,22 @@ public class Lab3_part1 {
         System.out.println("size of list: "+dll.Size());
         System.out.println("");
         
-        /*DoubleLinkedList dll2= new DoubleLinkedList();
+        DoubleLinkedList dll2= new DoubleLinkedList();
         dll2.addFirst(8888);
         dll2.addLast(9999);
-        dll.addListFirst(dll2);
-        dll.addListLast(dll2);
-        //dll2.printFromStart();
-        dll.printFromStart();*/
+        
+        DoubleLinkedList dll3= new DoubleLinkedList();
+        dll3.addFirst(7777);
+        dll3.addLast(5555);
+        
+        
+        
+        dll.addListFirst(dll2);//добавил новый лист в начало старого
+        dll.addListLast(dll3);//добавил новsй в конец старого
+        System.out.println("содал новый лист");
+        dll2.printFromStart();
+        System.out.println("");
+        dll.printFromStart();
         
         Object[] objects={22, 33, 44};
         

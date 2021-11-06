@@ -61,17 +61,18 @@ public class DoubleLinkedList {
     }
     
     public void addListFirst(DoubleLinkedList dll){
-        Node firstNode=new Node(dll);       
+        /*Node firstNode=new Node(dll);       
         Node prevNode=firstNode;
         for(int i = 1; i <dll.Size(); i++){
            Node node= new Node(dll);//3
            node.prev=prevNode;//
            prevNode.next=node;
            prevNode=node; 
-        }
-        prevNode.next=head;
-        head.prev=prevNode;
-        head=firstNode;
+        }*/
+        dll.tail.next=head;
+        head.prev=dll.tail;
+        head=dll.head;
+        
     }
     
     
@@ -121,6 +122,7 @@ public class DoubleLinkedList {
     
     public void addArrayLast(Object[] objects){
      if (objects==null || objects.length==0) {throw new NullPointerException("Arrays is empty");}
+     
         Node firstNode= new Node(objects[0]);       
         Node prevNode=firstNode; //1
         for (int i = 1; i < objects.length; i++) {
@@ -135,17 +137,10 @@ public class DoubleLinkedList {
     }
     
     public void addListLast(DoubleLinkedList dll){
-        Node firstNode= new Node(dll);       
-        Node prevNode=firstNode;
-        for (int i = 1; i <dll.Size(); i++){
-           Node node= new Node(dll);//3
-           node.prev=prevNode;//
-           prevNode.next=node;
-           prevNode=node;//3
-           }
-        firstNode.prev=tail;
-        tail.next=firstNode;
-        tail=prevNode;
+        tail.next=dll.head;
+        dll.head.prev=tail;
+        tail=dll.tail;
+        
     }
     
     public boolean isEmty(){
