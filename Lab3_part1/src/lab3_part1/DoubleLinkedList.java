@@ -46,7 +46,7 @@ public class DoubleLinkedList {
     
  
     public void addArrayFirst(Object[] objects){
-        
+        if (objects==null || objects.length==0) {throw new NullPointerException("Arrays is empty");}
         Node firstNode= new Node(objects[0]);       
         Node prevNode=firstNode; //1
         for (int i = 1; i < objects.length; i++) {
@@ -120,7 +120,7 @@ public class DoubleLinkedList {
     }
     
     public void addArrayLast(Object[] objects){
-        
+     if (objects==null || objects.length==0) {throw new NullPointerException("Arrays is empty");}
         Node firstNode= new Node(objects[0]);       
         Node prevNode=firstNode; //1
         for (int i = 1; i < objects.length; i++) {
