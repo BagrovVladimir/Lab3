@@ -41,7 +41,6 @@ public class LinkedList {
     
     public void addLast(Object value){
         if (tail!=null) {
-            //Node newNode= new Node(value);
             tail.next=new Node(value);
             tail=tail.next;
         } else {head=tail= new Node(value);}
@@ -110,8 +109,6 @@ public class LinkedList {
             while (n.next!=tail) {
                 n=n.next;
                 i=i+1;}
-            //tail=n;
-            //tail.next=null; 
         return i;}
         else{       
         return i=1;
@@ -121,9 +118,10 @@ public class LinkedList {
     public void printAll(){
         Node n=head;
         while(n!=null){
-            System.out.println(n.value);
+            System.out.print("'"+n.value+"'"+" ");
             n=n.next;
         }
+        System.out.println();
     }
     
     public void deleteValue(Object value){
@@ -131,7 +129,6 @@ public class LinkedList {
         
         if(head.checkValue(value)){
             removeFirst();
-            //getRemoveFromStart();
         return;}
         
         Node prev = head;
@@ -140,7 +137,6 @@ public class LinkedList {
             if(n.checkValue(value)){
                 if(n==tail)
                     removeLast();
-                    //getRemoveFromLast();
                 else
                     prev.next=n.next;
             return;    

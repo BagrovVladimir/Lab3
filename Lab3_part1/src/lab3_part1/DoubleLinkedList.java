@@ -61,14 +61,6 @@ public class DoubleLinkedList {
     }
     
     public void addListFirst(DoubleLinkedList dll){
-        /*Node firstNode=new Node(dll);       
-        Node prevNode=firstNode;
-        for(int i = 1; i <dll.Size(); i++){
-           Node node= new Node(dll);//3
-           node.prev=prevNode;//
-           prevNode.next=node;
-           prevNode=node; 
-        }*/
         dll.tail.next=head;
         head.prev=dll.tail;
         head=dll.head;
@@ -155,11 +147,8 @@ public class DoubleLinkedList {
         Node n=head;
             i=2;
             while (n.next!=tail) {
-                //tail.prev=n;
                 n=n.next;
                 i=i+1;}
-            //tail=n;
-            //tail.next=null; 
         return i;}
         else{       
         return i=1;
@@ -169,17 +158,19 @@ public class DoubleLinkedList {
     public void printFromStart(){
         Node n=head;
         while(n!=null){
-            System.out.println(n.value);
+            System.out.print(n.value+" ");
             n=n.next;
         }
+        System.out.println();
     }
     
     public void printFromEnd(){
         Node n=tail;
         while(n!=null){
-            System.out.println(n.value);
+            System.out.print(n.value+" ");
             n=n.prev;
         }
+        System.out.println();
     }
     
     public boolean containsValue(Object value){
@@ -197,7 +188,6 @@ public class DoubleLinkedList {
         
         if(head.checkValue(value)){
             removeFirst();
-            //getRemoveFromStart();
         return;}
         
         Node prev = head;
